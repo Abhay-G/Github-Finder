@@ -16,7 +16,10 @@ function About() {
         <p>It is a webapp made on react framework.</p>
         <p>
           It's open source. You can contribute here.{' '}
-          <a style={{ color: ' #ff79c6' }} href='https://github.com/Abhay-G'>
+          <a
+            style={{ color: ' #ff79c6' }}
+            href='https://github.com/Abhay-G/Github-Finder'
+          >
             Contribute
           </a>
         </p>
