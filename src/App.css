@@ -49,6 +49,9 @@
   line-height: 2;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+.about-card {
+  width: 500px;
+}
 .repo-heading {
   text-transform: uppercase;
   font-weight: 400;
@@ -476,13 +479,55 @@ table th {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
+.users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.cartoon-home {
+  width: 500px;
+  margin: 100px auto 0;
+  display: block;
+}
+.cartoon-about {
+  width: 300px;
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+}
 /* Mobile Styles */
 @media (max-width: 700px) {
   .hide-sm {
     display: none;
   }
-
+  .cartoon-home {
+    width: 350px;
+    margin: 200px auto 0;
+    display: block;
+  }
+  .cartoon-about {
+    display: none;
+  }
+  .users {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+  .home-card {
+    width: 100%;
+  }
+  .repo-links {
+    color: #89c9b8;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-weight: 300;
+    font-size: 1.15rem;
+  }
+  .repo-desc {
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    margin-bottom: 15px;
+  }
   .grid-2,
   .grid-3,
   .grid-4 {

@@ -12,7 +12,7 @@ function About() {
           and much more.
         </p>
       </div>
-      <div className='home-card' style={{ width: '500px' }}>
+      <div className='home-card about-card'>
         <p>It is a webapp made on react framework.</p>
         <p>
           It's open source. You can contribute here.{' '}
@@ -48,16 +48,7 @@ function About() {
           <i class='fab fa-instagram'></i>
         </a>
       </div>
-      <img
-        src={aboutpic}
-        alt='img'
-        style={{
-          width: '300px',
-          position: 'absolute',
-          bottom: '50px',
-          right: '100px',
-        }}
-      />
+      <img src={aboutpic} alt='img' className='cartoon-about' />
     </div>
   );
 }

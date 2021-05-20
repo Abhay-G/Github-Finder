@@ -1,11 +1,13 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Spinner from '../users/Spinner';
 import Repo from '../repos/Repo';
+import { GithubContext } from '../../../context/github/GithubContext';
 const SingleUser = (props) => {
+  const value = useContext(GithubContext);
   useEffect(() => {
-    props.getUser(props.match.params.login);
-    props.getUserRepo(props.match.params.login);
+    value.getUser(props.match.params.login);
+    value.getUserRepo(props.match.params.login);
     // eslint-disable-next-line
   }, []);
 
@@ -23,10 +25,10 @@ const SingleUser = (props) => {
     public_repos,
     public_gists,
     hireable,
-  } = props.user;
-  const { repos } = props;
-  const { loading } = props;
-  if (loading) return <Spinner />;
+  } = value.user;
+  const repos = value.repos;
+
+  if (value.loading) return <Spinner />;
   return (
     <Fragment>
       <Link to='/' className='back btn btn-light'>
@@ -99,7 +101,14 @@ const SingleUser = (props) => {
         <div className='badge badge-dark'>Public Gists: {public_gists}</div>
       </div>
       <div>
-        <Repo repos={repos} />
+        {repos.length > 0 ? (
+          <Repo repos={repos} />
+        ) : (
+          <div className='alert alert-light'>
+            <i className='fas fa-info-circle' />
+            No repository exist
+          </div>
+        )}
       </div>
     </Fragment>
   );

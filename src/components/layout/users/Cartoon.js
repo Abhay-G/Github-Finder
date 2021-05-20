@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import cartoon from '../bgimg.svg';
+import { GithubContext } from '../../../context/github/GithubContext';
 function Cartoon() {
+  const { users } = useContext(GithubContext);
   return (
     <Fragment>
-      <img
-        src={cartoon}
-        alt='loading...'
-        style={{ width: '500px', margin: '100px auto 0', display: 'block' }}
-      />
+      {users.length <= 0 && (
+        <img src={cartoon} alt='loading...' className='cartoon-home' />
+      )}
     </Fragment>
   );
 }
