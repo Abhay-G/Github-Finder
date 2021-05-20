@@ -20,7 +20,7 @@ function Navbar(props) {
   );
 }
 Navbar.defaultProps = {
-  title: ' Github Finder',
+  title: ' GFind',
   icon: 'fab fa-github',
 };
 
